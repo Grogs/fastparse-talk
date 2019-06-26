@@ -1,7 +1,7 @@
 package linktext.after
 
 import fastparse.NoWhitespace._
-import fastparse.{CharIn, CharsWhile, End, P, Start}
+import fastparse.{CharIn, CharsWhile, End, P, Start, EagerOpsStr}
 
 import scala.util.Try
 
@@ -30,13 +30,9 @@ case class LinkTextTemplate(tokens: Seq[Token]) {
 object LinkTextTemplate {
 
   object Parser {
-    def open[_: P] = P("{")
+    def identifier[_: P] = P(CharIn("a-z_").rep.!)
 
-    def close[_: P] = P("}")
-
-    def identifier[_: P] = P(CharIn("a-z", ".", "_").rep.!)
-
-    def variable[_: P] = P(open ~/ identifier ~/ close).map(Variable)
+    def variable[_: P] = P("{" ~/ identifier ~/ "}").map(Variable)
 
     def literal[_: P] = P(CharsWhile(c => c != '{' && c != '}').!).map(Literal)
 
