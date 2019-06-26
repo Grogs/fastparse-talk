@@ -12,7 +12,7 @@ object ParsingExample extends App {
 
 
 object UsageExample extends App {
-  val template = LinkTextTemplate.parse("Template using {a} with {b}").get
+  val template = LinkTextTemplate.parse("Template using {a} and {b}").get
 
   println(
     template.render(Map("a" -> "scala", "b" -> "fastparse"))

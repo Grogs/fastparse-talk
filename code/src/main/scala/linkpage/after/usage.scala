@@ -1,6 +1,6 @@
 package linkpage.after
 
-object usage extends App {
+object Example extends App {
   val rawUrls = Seq("LandingPage",
                     "SearchPage()",
                     "SearchPage(petIncluded=true)",
