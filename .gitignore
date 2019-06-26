@@ -1,0 +1,16 @@
+code/.idea/
+code/*.iml
+code/*.iws
+code/*.eml
+code/out/
+code/target/
+code/project/target/
+code/.DS_Store
+code/.svn
+code/log/*.log
+code/tmp/**
+slides/node_modules/
+slides/package-lock.json
+slides/.sass-cache
+slides/css/reveal.min.css
+slides/js/reveal.min.js
