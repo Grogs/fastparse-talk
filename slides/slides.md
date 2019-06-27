@@ -103,6 +103,9 @@ Note:
 - Let's take a look at what the problem was, and how we used FastParse to solve it.
 
 
+![](link-generator.svg)
+
+
 | Destination ID |
 |----------------|
 | 1              |
